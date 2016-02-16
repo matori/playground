@@ -16,23 +16,19 @@ describe("attr()", function () {
     describe("属性値の取得", function () {
 
         it("tabindex属性値を取得する", function () {
-            assert(div.hasAttribute("tabindex") === true);
             assert(attr(div, "tabindex") === "-1");
         });
 
         it("未設定の属性値を取得する", function () {
             assert(div.hasAttribute("foo") === false);
-            assert(attr(div, "foo") === null);
         });
 
     });
 
-    describe("属性値の削除", function () {
+    describe("属性の削除", function () {
 
-        it("tabindex属性値を削除する", function () {
-            assert(div.hasAttribute("tabindex") === true);
+        it("tabindex属性を削除する", function () {
             attr(div, "tabindex", null);
-            assert(div.getAttribute("tabindex") === null);
             assert(div.hasAttribute("tabindex") === false);
         });
 
@@ -70,19 +66,33 @@ describe("attr()", function () {
         });
 
         it("値に配列を設定", function () {
-            attr(div, "foo", [1,2,3]);
+            attr(div, "foo", [1, 2, 3]);
             assert(div.getAttribute("foo") === "1,2,3");
         });
 
         it("値にnullを設定（要素の削除）", function () {
             attr(div, "foo", null);
-            assert(div.getAttribute("foo") === null);
+            assert(div.hasAttribute("foo") === false);
         });
 
         it("値にundefinedを設定（値の取得と等価）", function () {
             attr(div, "foo", undefined);
             // 存在していない属性なのでnullになる
             assert(div.getAttribute("foo") === null);
+        });
+    });
+
+    describe("オブジェクトによる設定", function () {
+
+        it("属性の削除と追加", function () {
+            attr(div, {
+                "tabindex": null,
+                "foo": "foo!",
+                "bar": "bar!"
+            });
+            assert(div.hasAttribute("tabindex") === false);
+            assert(div.getAttribute("foo") === "foo!");
+            assert(div.getAttribute("bar") === "bar!");
         });
     });
 });
