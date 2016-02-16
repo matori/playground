@@ -9,13 +9,16 @@
   },
   "devDependencies": {
     "browserify": "^13.0.0",
-    "intelli-espower-loader": "^1.0.1",
+    "espowerify": "^1.0.0",
     "karma-browserify": "^5.0.1",
     "karma-chrome-launcher": "^0.2.2",
+    "karma-fixture": "^0.2.6",
+    "karma-html2js-preprocessor": "^0.1.0",
     "karma-mocha": "^0.2.2",
     "karma-mocha-reporter": "^1.1.5",
     "mocha": "^2.4.5",
-    "power-assert": "^1.2.0"
+    "power-assert": "^1.2.0",
+    "watchify": "^3.7.0"
   },
   "dependencies": {}
 }
