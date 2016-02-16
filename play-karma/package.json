@@ -1,0 +1,21 @@
+{
+  "name": "play-karma",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "intelli-espower-loader": "^1.0.1",
+    "karma-browserify": "^5.0.1",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.2",
+    "karma-mocha-reporter": "^1.1.5",
+    "mocha": "^2.4.5",
+    "power-assert": "^1.2.0"
+  },
+  "dependencies": {}
+}
