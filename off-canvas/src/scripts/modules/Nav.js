@@ -183,6 +183,7 @@ Nav.prototype.stop = function () {
     this._toggleCloseHandlers("remove");
     this._toggleNavHandler("remove", "open");
     this._toggleNavHandler("remove", "close");
+    this._disableScroll.stop();
     toggleTabFocusable(this._focusableElementsWithinNav, this._tabindexCacheWithinNav);
     toggleTabFocusable(this._focusableElementsWithoutNav, this._tabindexCacheWithoutNav);
     this._nav.classList.remove(activeClass);
