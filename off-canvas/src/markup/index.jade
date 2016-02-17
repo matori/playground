@@ -1,0 +1,38 @@
+doctype html
+
+include ./mixins/meta
+
+html(lang="ja")
+    head
+        +meta("charset", "UTF-8")
+        +meta("x-ua-compatible", "IE=edge")
+        +meta("x-rim-auto-match", "none")
+        +meta("format-detection", "telephone=no, email=no, address=no")
+        +meta("viewport", "width=device-width")
+        title
+        link(rel="stylesheet", href="styles/main.css")
+        script(src="scripts/main.js", async, defer)
+
+    body
+
+        header#header
+            a#openNav(href="#nav", role="button", aria-controls="nav", aria-expanded="false") OPEN
+
+        nav#nav(aria-hidden="true", tabindex="-1")
+            a#closeNav(href="#openNav", role="button", aria-controls="nav", , aria-expanded="false") CLOSE
+            ul
+                - var j = 0;
+                while j < 10
+                    li
+                        a(href="http://www.google.co.jp") goole.co.jp
+                    - j++;
+
+        main#main(style="height:2000px")
+
+            - var i = 0;
+            while i < 20
+                p
+                    a(href="http://example.com/") http://example.com/
+                - i++;
+            p
+                input(type="text")
