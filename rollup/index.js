@@ -12,7 +12,10 @@ rollup.rollup({
     ]
 }).then((bundle) => {
     bundle.write({
-        format: "cjs",
-        dest: "_build/main.js"
+        format: "umd",
+        moduleId: "myMod",
+        moduleName: "myMod",
+        dest: "_build/main.js",
+        sourceMap: "inline"
     });
 });

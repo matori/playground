@@ -1,5 +1,8 @@
 "use strict";
 
+import {sub2, subsub} from "./sub2"
+
 export default function sub() {
-    return "sub.js";
+    subsub();
+    return sub2;
 }

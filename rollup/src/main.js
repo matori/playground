@@ -2,11 +2,7 @@
 
 import sub from "./sub"
 
-const main = function main(arg0) {
-    if (arg0) {
-        return "main.js";
-    }
-    return sub();
-};
+function main() {}
+main.sub = sub;
 
-console.log(main());
+export default main;
